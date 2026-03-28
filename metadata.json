@@ -1,5 +1,5 @@
 {
-  "name": "Universal Bridge AI",
-  "description": "Converts messy real-world input into structured, actionable intelligence using Gemini AI.",
+  "name": "NewsBridge AI",
+  "description": "Converts messy news-related input into structured, actionable intelligence using Gemini AI.",
   "requestFramePermissions": ["microphone"]
 }

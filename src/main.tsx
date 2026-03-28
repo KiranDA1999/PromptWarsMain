@@ -33,8 +33,7 @@ async function processInput(text: string, imageData?: string) {
   try {
     const model = "gemini-3-flash-preview";
     
-    const prompt = `Convert the following messy real-world input into structured JSON with:
-intent, entities, urgency, summary, actions. Be concise and accurate.
+    const prompt = `Convert the following messy news-related input into structured JSON with intent, entities, urgency, and actions. Focus on interpreting news, assessing real-world impact, and guiding user decisions.
 Input: "${text}"`;
 
     const contents: any = { parts: [{ text: prompt }] };
@@ -81,7 +80,7 @@ function displayResult(result: BridgeOutput) {
   outputSection.classList.remove('hidden');
   
   // Intent & Urgency
-  outputIntent.textContent = `🧠 ${result.intent}`;
+  outputIntent.textContent = `📰 ${result.intent}`;
   outputUrgency.textContent = `⚠️ ${result.urgency}`;
   
   // Urgency Styling
