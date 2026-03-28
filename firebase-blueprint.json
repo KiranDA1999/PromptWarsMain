@@ -1,0 +1,26 @@
+{
+  "entities": {
+    "NewsAnalysis": {
+      "title": "News Analysis",
+      "description": "A structured analysis of a news input.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The UID of the user who created the analysis." },
+        "input": { "type": "string", "description": "The original messy news input." },
+        "intent": { "type": "string", "description": "The detected intent of the news." },
+        "urgency": { "type": "string", "enum": ["Low", "Medium", "High"], "description": "The urgency level." },
+        "summary": { "type": "string", "description": "A concise structured summary." },
+        "actions": { "type": "array", "items": { "type": "string" }, "description": "Recommended actions." },
+        "entities": { "type": "array", "items": { "type": "string" }, "description": "Extracted entities." },
+        "timestamp": { "type": "number", "description": "The time the analysis was created." }
+      },
+      "required": ["uid", "input", "intent", "urgency", "summary", "actions", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/news_analyses/{analysisId}": {
+      "schema": "NewsAnalysis",
+      "description": "Collection of news analyses created by users."
+    }
+  }
+}
